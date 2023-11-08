@@ -7,7 +7,7 @@ from setproctitle import *
 
 from config import Config
 from model.generator import generator as G
-from model.discriminator import Discriminator as D
+from model.discriminator_star import Discriminator as D
 
 from torch.utils.tensorboard import SummaryWriter
 from functions.load_network import load_networks, init_weights
@@ -35,8 +35,7 @@ def setup(opt):
     dataload = get_loader(opt)
     # -------------------------------------------- setup network --------------------------------------------
     generator = G(opt, device).to(device)
-    discriminator = D(opt, device).to(device) # masked_cycle_gan
-    # discriminator = D().to(device)  # star_gan
+    discriminator = D().to(device)  # star_gan
 
     if opt.continue_train:
         generator = load_networks(generator, opt.checkpoint_load_num, device, net_name='generator', weight_path= "/storage/mskim/checkpoint/{}/".format(opt.checkpoint_name))
