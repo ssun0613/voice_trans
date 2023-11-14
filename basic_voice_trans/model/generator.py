@@ -11,9 +11,9 @@ class generator(nn.Module):
             from ssun.Voice_trans.model.decoder_s import Decoder_s as Ds
             from ssun.Voice_trans.model.pitch_predictor import pitch_predictor as P
         else:
-            from Voice_trans.model.encoder import Er, Ec
-            from Voice_trans.model.decoder_s import Decoder_s as Ds
-            from Voice_trans.model.pitch_predictor import pitch_predictor as P
+            from basic_voice_trans.model.encoder import Er, Ec
+            from basic_voice_trans.model.decoder_s import Decoder_s as Ds
+            from basic_voice_trans.model.pitch_predictor import pitch_predictor as P
 
         self.Er = Er()
         self.Ec = Ec()

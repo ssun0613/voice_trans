@@ -31,7 +31,7 @@ def setup(opt):
     if not opt.debugging:
         from ssun.Voice_trans.data.dataload_dacon import get_loader
     else:
-        from Voice_trans.data.dataload_dacon import get_loader
+        from basic_voice_trans.data.dataload_dacon import get_loader
     dataload = get_loader(opt)
     # -------------------------------------------- setup network --------------------------------------------
     generator = G(opt, device).to(device)
